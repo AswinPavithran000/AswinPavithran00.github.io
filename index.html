@@ -165,17 +165,25 @@
 
   <script>
     // JavaScript for Modal
-    function openModal() {
+    function openModal(imageSrc) {
       const modal = document.getElementById("myModal");
       const modalImg = document.getElementById("modalImage");
 
       modal.style.display = "block";
-      modalImg.src = "https://github.com/AswinPavithran000/AswinPavithran00.github.io/blob/main/images/Screenshot%202024-10-20%20220018.png?raw=true"; // Adjust this path based on your setup
+      modalImg.src = imageSrc; // Use the provided image source
     }
 
     function closeModal() {
       document.getElementById("myModal").style.display = "none";
     }
+
+    // Close modal when clicking outside of it
+    window.onclick = function(event) {
+      const modal = document.getElementById("myModal");
+      if (event.target == modal) {
+        closeModal();
+      }
+    };
   </script>
 </head>
 
@@ -214,7 +222,10 @@
     <h2>Profiles</h2>
     <ul>
       <li>
-        <button class="button" onclick="openModal()">TryHackMe Profile</button>
+        <button class="button" onclick="openModal('images/Screenshot.png')">TryHackMe Profile</button>
+      </li>
+      <li>
+        <button class="button" onclick="openModal('images/HackTheBox.png')">Hack The Box Profile</button>
       </li>
     </ul>
   </section>
