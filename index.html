@@ -4,57 +4,235 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aswin Pavithran - Cybersecurity Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Global Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
+    }
+
+    /* Header Styles */
+    header {
+      background-color: #161b22;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #58a6ff;
+      margin-bottom: 5px;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #c9d1d9;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #58a6ff;
+    }
+
+    /* Section Styles */
+    section {
+      max-width: 1000px;
+      margin: 50px auto;
+      padding: 30px;
+      background-color: #161b22;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #58a6ff;
+      border-bottom: 2px solid #30363d;
+      padding-bottom: 8px;
+    }
+
+    section p, ul {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    /* Button Styles */
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 10px;
+      background-color: #58a6ff;
+      color: #161b22;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: background-color 0.3s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .button:hover {
+      background-color: #1f6feb;
+    }
+
+    /* Footer Styles */
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #161b22;
+      color: #c9d1d9;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      padding-top: 100px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 80%;
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      section {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      nav a {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+
+  <script>
+    // JavaScript for Modal
+    function openModal() {
+      const modal = document.getElementById("myModal");
+      const modalImg = document.getElementById("modalImage");
+
+      modal.style.display = "block";
+      modalImg.src = "images/Screenshot.png"; // Adjust this path based on your setup
+    }
+
+    function closeModal() {
+      document.getElementById("myModal").style.display = "none";
+    }
+  </script>
 </head>
+
 <body>
-  <div class="resume-container">
-    <div class="header">
-      <div class="photo">
-        <img src="your-photo.jpg" alt="Aswin Pavithran">
-      </div>
-      <div class="info">
-        <h1>Aswin Pavithran</h1>
-        <p class="job-title">Cybersecurity Enthusiast</p>
-        <p class="description">
-          Passionate about ethical hacking, CTF competitions, and exploring advanced cybersecurity topics.
-        </p>
-        <div class="contact">
-          <div>📧 <a href="mailto:maswin715419@gmail.com">maswin715419@gmail.com</a></div>
-          <div>🌐 <a href="https://www.linkedin.com/in/aswin-pavithran-4811b9311/" target="_blank">LinkedIn Profile</a></div>
-          <div>📍 Kerala, India</div>
-        </div>
-      </div>
-    </div>
+  <header>
+    <h1>Aswin Pavithran</h1>
+  </header>
 
-    <div class="main">
-      <div class="column">
-        <h2>Skills</h2>
-        <ul>
-          <li>Kali Linux <span class="progress"><span style="width: 80%;"></span></span></li>
-          <li>Python <span class="progress"><span style="width: 60%;"></span></span></li>
-          <li>Pyphisher <span class="progress"><span style="width: 75%;"></span></span></li>
-          <li>Linux Commands <span class="progress"><span style="width: 85%;"></span></span></li>
-        </ul>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Hello! I am <strong>Aswin Pavithran</strong>, a cybersecurity enthusiast passionate about ethical hacking and Capture The Flag (CTF) competitions. I am currently exploring advanced topics in cybersecurity and improving my problem-solving skills.
+    </p>
+  </section>
 
-        <h2>Certifications</h2>
-        <ul>
-          <li>AWS Security - Encryption Fundamentals</li>
-          <li>Cybersecurity and Ethical Hacking</li>
-          <li>AWS Security Fundamentals (Second Edition)</li>
-        </ul>
-      </div>
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>Kali Linux: Proficient in using Kali Linux for network scanning.</li>
+      <li>Python: Basic Knowledge in Python.</li>
+      <li>Pyphisher: Experienced with this tool for testing application security and educating users.</li>
+      <li>Linux Commands: Able to use command-line tools for managing Linux systems.</li>
+    </ul>
+  </section>
 
-      <div class="column">
-        <h2>Profiles</h2>
-        <ul>
-          <li><a class="button" href="https://github.com/AswinPavithran000/AswinPavithran.github.io/blob/main/images/HTB%20Academy%20Student%20Transcript.pdf" target="_blank">Hack The Box Profile</a></li>
-          <li><a class="button" href="https://github.com/AswinPavithran000/AswinPavithran.github.io/blob/main/images/Screenshot%202024-10-20%20220018.png" target="_blank">TryHackMe Profile</a></li>
-        </ul>
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <ul>
+      <li>AWS Security - Encryption Fundamentals</li>
+      <li>Cybersecurity and Ethical Hacking</li>
+      <li>AWS Security Fundamentals (Second Edition)</li>
+    </ul>
+  </section>
 
-        <h2>Reference</h2>
-        <p>Bailey Dupont<br>Graphic Designer, Arowawi Industries<br>📞 +123-456-7890</p>
-      </div>
-    </div>
+  <section id="profiles">
+    <h2>Profiles</h2>
+    <ul>
+      <li>
+        <button class="button" onclick="openModal()">TryHackMe Profile</button>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Modal Structure -->
+  <div id="myModal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
   </div>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:maswin715419@gmail.com">maswin715419@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/aswin-pavithran-4811b9311/" target="_blank">Aswin Pavithran</a></p>
+  </section><br><br>
+
+  <footer>
+    <p>&copy; 2024 Aswin Pavithran. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>
